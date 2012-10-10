@@ -1,5 +1,6 @@
 package EggPuzzle;
 
 public class Node {
-	//Dette er siste forsøk!!
+	//Dette er siste forsï¿½k!!
+	//nei dette er siste :)
 }
