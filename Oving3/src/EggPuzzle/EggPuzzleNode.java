@@ -5,6 +5,4 @@ package EggPuzzle;
 
 public class EggPuzzleNode{
 	
-	
-
 }

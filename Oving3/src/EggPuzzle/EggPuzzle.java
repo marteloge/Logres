@@ -4,6 +4,6 @@ package EggPuzzle;
 public class EggPuzzle {
 
 	SimulatedAnnealing SA = new SimulatedAnnealing();
-	
+
 	
 }
