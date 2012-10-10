@@ -1,4 +1,4 @@
-package TheEggCartonPuzzle;
+package EggPuzzle;
 
 import java.util.ArrayList;
 

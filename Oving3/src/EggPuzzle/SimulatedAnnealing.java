@@ -1,4 +1,4 @@
-package Ov3Tillegg;
+package EggPuzzle;
 
 public class SimulatedAnnealing {
 

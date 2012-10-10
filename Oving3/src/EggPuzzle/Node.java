@@ -2,10 +2,7 @@ package Ov3Tillegg;
 
 import java.util.*;
 
-public abstract class Node {
-
-	protected PriorityQueue<Node> children;
-	
+public abstract class Node {	
 	
 	public Node(){
 		
