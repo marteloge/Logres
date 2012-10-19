@@ -13,16 +13,14 @@ public class KQueenPuzzle {
 		long startTime = System.currentTimeMillis();
 		
 		
-		LocalSearch LS = new LocalSearch(220);
+		LocalSearch LS = new LocalSearch(16);
 		board = LS.simulate();
 		
 		long stopTime = System.currentTimeMillis();
 		long total = stopTime - startTime;
+
 		
-		System.out.println("Starttime: " + startTime);
-		System.out.println("Stoptime: " + stopTime);
-		
-		System.out.println(total);
+		System.out.println("Total runtime: " + total + "(ms)");
 		
 		
 	}
