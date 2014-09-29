@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class LocalSearch {
 	
 	private ArrayList<ArrayList<Integer>> board; //Selve brettet. 1(Queen)|0(Empty)
-	private int k; //Dimensjonen på brettet (K*K)
+	private int k; //Dimensjonen pÃ¥ brettet (K*K)
 	private int antallSimuleringer = 0;
-	private boolean continueSimulation = true; //settes til false om vi har funnet en optimal løsning.
+	private boolean continueSimulation = true; //settes til false om vi har funnet en optimal lÃ¸sning.
 	
 	
 	public LocalSearch(int k){
@@ -60,15 +60,15 @@ public class LocalSearch {
 	
 	
 	/**
-	 * Dette er selve simuleringen av det lokale søket etter en optimal løsning.
-	 * @return ArrayList<Arraylist<Integer>> som forhåpentligvis er en optimal løsning på
+	 * Dette er selve simuleringen av det lokale sÃ¸ket etter en optimal lÃ¸sning.
+	 * @return ArrayList<Arraylist<Integer>> som forhÃ¥pentligvis er en optimal lÃ¸sning pÃ¥
 	 * problemet.
 	 */
 	
 	public ArrayList<ArrayList<Integer>> simulate(){
 				
-		//Dette er en while-løkke som begrenser at algoritmen skal kjøre i det uendelige
-		//velger k*100 for at den skal få kjøre nok, men ikke for mange ganger.
+		//Dette er en while-lÃ¸kke som begrenser at algoritmen skal kjÃ¸re i det uendelige
+		//velger k*100 for at den skal fÃ¥ kjÃ¸re nok, men ikke for mange ganger.
 		
 		while(continueSimulation && antallSimuleringer<k*100){
 			
@@ -77,7 +77,7 @@ public class LocalSearch {
 			//Evaluerer den random raden (evaluerer hver posisjon i raden)
 			ArrayList<Integer> evaluatedRow = evaluateRow((int)randomRow);
 			
-			int bestValue = k*k; //Setter k*k bare for å ha en stoor verdi som evaluateRow ikke vil komme frem til
+			int bestValue = k*k; //Setter k*k bare for Ã¥ ha en stoor verdi som evaluateRow ikke vil komme frem til
 			int currentCol = 0;
 			
 			//Finner den beste verdin den fant i den evaluerte raden
@@ -92,9 +92,9 @@ public class LocalSearch {
 
 			boolean swapping = true;
 			
-			//Bytter posisjon på dronning
+			//Bytter posisjon pÃ¥ dronning
 			while(swapping){
-				// Må ha random siden flere verdier kan være like som kan føre til at en løsning kjører seg fast.
+				// MÃ¥ ha random siden flere verdier kan vÃ¦re like som kan fÃ¸re til at en lÃ¸sning kjÃ¸rer seg fast.
 				double randomCol = Math.random()*k;
 				if(evaluatedRow.get((int)randomCol)==bestValue){
 					board.get((int)randomRow).set(currentCol, 0);
@@ -104,7 +104,7 @@ public class LocalSearch {
 				
 			}
 			
-			//Sjekker om byttet førte til en optimal løsning
+			//Sjekker om byttet fÃ¸rte til en optimal lÃ¸sning
 			if(haveWon()){
 				continueSimulation=false;
 			}
@@ -112,15 +112,15 @@ public class LocalSearch {
 			antallSimuleringer++;
 		}
 		
-		//Hvis vi ikke brøt simuleringen selv så vil det si at den kjørte for lenge uten å finne en 
-		//optimal løsning
+		//Hvis vi ikke brÃ¸t simuleringen selv sÃ¥ vil det si at den kjÃ¸rte for lenge uten Ã¥ finne en 
+		//optimal lÃ¸sning
 		
 		if(continueSimulation){
 			System.out.println("No optimal solution was found");
 			System.out.println("Simulations: " + antallSimuleringer);
 		}
 		
-		//Hvis vi brøt løkken selv og fant en optimal løsning.
+		//Hvis vi brÃ¸t lÃ¸kken selv og fant en optimal lÃ¸sning.
 		else{
 			System.out.println("We found a optimal solution");
 			System.out.println(" ");
@@ -132,7 +132,7 @@ public class LocalSearch {
 		}
 		
 		
-		//Returnerer brettet (ikke nødvendigvis en optimal løsning)
+		//Returnerer brettet (ikke nÃ¸dvendigvis en optimal lÃ¸sning)
 		return board;
 	}
 	
@@ -140,7 +140,7 @@ public class LocalSearch {
 	/**
 	 * Denne metoden skal ta inn en rad fra board, evaluere alle plassene i raden og 
 	 * notere hvor mange dronninger det kolliderer med om man plasserer dronningen i rad i i kolonne j
-	 * @param int row - Er valgt random når metoden kalles opp
+	 * @param int row - Er valgt random nÃ¥r metoden kalles opp
 	 * @return ArrayList<Integer> - En hel rad der alle posisjoner er evaluert i forhold til board
 	 * 
 	 */
@@ -172,8 +172,8 @@ public class LocalSearch {
 	
 	/**
 	 * Teller alle kollisjoner i vertikal retning i forhold til posisjon (x,y)
-	 * @param row - x-posisjon på brettet
-	 * @param col - y-posisjon på brettet
+	 * @param row - x-posisjon pÃ¥ brettet
+	 * @param col - y-posisjon pÃ¥ brettet
 	 * @param currentCol - 
 	 * @return
 	 */
@@ -249,7 +249,7 @@ public class LocalSearch {
 	}
 	
 	/**
-	 * Sjekker om brettet er en optimal løsning på problemet
+	 * Sjekker om brettet er en optimal lÃ¸sning pÃ¥ problemet
 	 * @return true/false: board == optimal solution?
 	 */
 	
@@ -262,6 +262,10 @@ public class LocalSearch {
 			}
 		}
 		return true;
+	}
+	
+	public int multiply(int a, int b) {
+		return a*b;
 	}
 	
 }
